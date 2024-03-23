@@ -1,0 +1,6 @@
+<!-- res/drawable/bg_message.xml -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <corners android:radius="8dp" />
+    <solid android:color="#D3D3D3" />
+</shape>

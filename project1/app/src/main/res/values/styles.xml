@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- styles.xml -->
+
+    <style name="OutlinedBoxBlackBorder" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxStrokeColor">@android:color/black</item>
+    </style>
+    <style name="OtpEditText" parent="Widget.AppCompat.EditText">
+        <item name="android:layout_width">40dp</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:inputType">number</item>
+        <item name="android:maxLength">1</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/edit_text_border</item>
+        <item name="android:padding">12dp</item>
+        <item name="android:layout_marginEnd">8dp</item>
+    </style>
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.DarkActionBar">
+        <!-- Other theme attributes -->
+
+        <!-- Define the PopupOverlay style -->
+        <item name="android:popupMenuStyle">@style/PopupMenu</item>
+        <item name="android:popupBackground">@drawable/menu_popup_background</item>
+    </style>
+
+    <style name="PopupMenu" parent="Widget.AppCompat.PopupMenu">
+        <item name="android:popupBackground">@drawable/menu_popup_background</item>
+    </style>
+
+
+</resources>
