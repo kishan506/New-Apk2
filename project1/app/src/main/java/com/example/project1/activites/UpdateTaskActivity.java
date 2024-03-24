@@ -89,6 +89,7 @@ public class UpdateTaskActivity extends AppCompatActivity {
 
         taskId = getIntent().getIntExtra("taskId", -1);
         Log.d("card_id from updateTask", taskId + "");
+        sh.setTaskId(taskId);
         getTaskByID();
 
         calendar = Calendar.getInstance();
@@ -328,6 +329,7 @@ public class UpdateTaskActivity extends AppCompatActivity {
             // Handle the case where the Card object is null
             return;
         }
+
         sh.setchatGroupId(card.getGroupId());
 //        groupId = card.getGroupId();
 //        Log.d("cardId setdata", card.toString());

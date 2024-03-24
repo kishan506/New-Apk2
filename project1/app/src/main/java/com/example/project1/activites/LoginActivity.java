@@ -146,6 +146,7 @@ public class LoginActivity extends AppCompatActivity {
                                 // Navigate to the activity_main screen
                                 Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                                 startActivity(intent);
+                                finish();
 
                             } else {
                                 showToast("Login failed. Please try again.");

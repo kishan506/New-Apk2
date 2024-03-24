@@ -125,6 +125,19 @@ public class UserSharedPreference {
         SharedPreferences.Editor myEdit = sh.edit();
         myEdit.putString("chatGroupId", chatGroupId);
         myEdit.commit();
+    } public void setTaskId(int taskId) {
+//        Log.d("from pref", phone + "");
+        SharedPreferences sh = context.getSharedPreferences("MySharedPref", context.MODE_PRIVATE);
+        SharedPreferences.Editor myEdit = sh.edit();
+        myEdit.putString("taskId", String.valueOf(taskId));
+        myEdit.commit();
     }
+    public String getTaskId() {
+        SharedPreferences sh = context.getSharedPreferences("MySharedPref", context.MODE_PRIVATE);
 
+        String z = sh.getString("taskId", "");
+
+        return z;
+
+    }
 }

@@ -136,7 +136,7 @@ public class ChatActivity extends AppCompatActivity {
         String messageText = editTextMessage.getText().toString().trim();
         if (!messageText.isEmpty()) {
 
-            sendMessageToGroup(sh.getchatGroupId(), messageText,sh.getFname());
+            sendMessageToGroup(sh.getTaskId(), messageText,sh.getFname());
         }
     }
 
@@ -145,7 +145,8 @@ public class ChatActivity extends AppCompatActivity {
         super.onResume();
         Log.d("resume", "onResume: ");
 
-        retrieveMessagesForCurrentUser(sh.getchatGroupId());
+        retrieveMessagesForCurrentUser(sh.getTaskId()
+        );
 
     }
 }

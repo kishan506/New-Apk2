@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.project1.R;
@@ -16,6 +17,10 @@ import com.example.project1.api.FastApiService;
 import com.example.project1.model.NewPassword;
 import com.example.project1.model.ResetPasswordResponse;
 import com.example.project1.sessionmanagement.UserSharedPreference;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import java.io.IOException;
 
@@ -82,6 +87,23 @@ public class ResetPasswordActivity extends AppCompatActivity {
                     // Handle the password reset logic
                     sh.setpassword(newPassword);
                     new ResetPasswordTask().execute(newPassword);
+                    FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+//                    String newPassword = "newPassword123";
+
+                    user.updatePassword(newPassword)
+                            .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                @Override
+                                public void onComplete(@NonNull Task <Void> task) {
+                                    if (task.isSuccessful()) {
+                                        Log.d("TAG", "User password updated successfully");
+                                        // Password updated successfully
+                                    } else {
+                                        Log.d("TAG", "Failed to update user password");
+                                        // Handle failure to update password
+                                    }
+                                }
+                            });
+
                 }
             }
         });
